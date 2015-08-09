@@ -13,6 +13,7 @@
     "jade": "~1.11.0",
     "mongoose": "^4.1.1",
     "morgan": "~1.6.1",
+    "nodemon": "^1.4.0",
     "serve-favicon": "~2.3.0"
   },
   "description": "- npm install express-generator - express <name of your app>",
