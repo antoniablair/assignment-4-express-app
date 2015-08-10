@@ -1,10 +1,9 @@
 var mongoose = require("mongoose");
 
-var PeopleSchema = mongoose.Schema({
+var PersonSchema = mongoose.Schema({
    name: { type: String, required: true, unique: true },
-   price: { type: Number, required: true, default: 0 }
 });
 
-var Person = mongoose.model("person", PeopleSchema);
+var Person = mongoose.model("Person", PersonSchema);
 
 module.exports = Person;

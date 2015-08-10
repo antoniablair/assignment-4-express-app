@@ -26,3 +26,4 @@ angular.module("my_world")
              save: save
          };
     });
+    

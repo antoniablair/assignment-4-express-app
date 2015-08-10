@@ -1,5 +1,5 @@
 angular.module("my_world")
-    .controller("PeopleCtrl", function($scope, $http, $location, PeopleSvc){
+    .controller("PeopleNewCtrl", function($scope, $http, $location, PeopleSvc){
         $scope.person = {
         };
         $scope.save = function(){
