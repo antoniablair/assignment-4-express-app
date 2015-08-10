@@ -28,7 +28,7 @@ angular.module("my_world")
          
          function remove(thing){
             var dfd = $q.defer();
-            $http.post("/api/things/delete", thing)
+            $http.post("/api/things", thing)
                 .then(function(thing){
                     dfd.resolve(thing);
                 })
