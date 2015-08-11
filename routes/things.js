@@ -20,4 +20,28 @@ router.post("/", function(req, res){
    });
 });
 
+router.delete("/", function(req, res, next){
+   var thing = new Thing(req.body);
+   console.log("in the router");
+   if (req.body.name) {
+      Thing.find({ name: thing.name }, function (err, thing) {
+         if (err) {
+            res.status(422);
+            res.send(err);
+         }
+         else if (thing.length==0) {
+            return res.send(500, 'That Thing is not found in the database');
+         }
+         else {
+            var thing = new Thing(req.body);
+            Thing.remove(
+               { name: thing.name })
+               .then(function(){
+                  res.redirect("/");
+            });
+         }
+      });
+   }
+});
+
 module.exports = router;

@@ -13,6 +13,10 @@ app.config(function($routeProvider, $locationProvider){
         controller: 'ThingsNewCtrl',
         templateUrl: '/templates/things_new.html'
     })
+    .when("/things/delete", {
+    controller: 'ThingsRemoveCtrl',
+    templateUrl: '/templates/things_remove.html'
+    })
     .when("/people", {
         controller: 'PeopleCtrl',
         templateUrl: '/templates/people.html'

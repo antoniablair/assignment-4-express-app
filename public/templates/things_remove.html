@@ -1,0 +1,26 @@
+<div class="alert alert-warning">
+    Select the Thing you would like to delete.
+</div>
+
+<div class="alert alert-danger" ng-show="error">
+    {{error.message}}
+</div>
+
+<a href="/things/new">Add a New Thing</a> |
+<a href="/things/delete">Delete a Thing</a>
+<ul class="list-group">
+   <li class="list-group-item" ng-repeat="thing in things">
+      {{ thing.name }} 
+      <br />
+      {{ thing.price | currency }} 
+      
+      <!--<a href="/things/delete">Delete Me</a>-->
+    <form class="form" name="thingForm">
+    <div class="form-group">
+    </div>
+    <button class="btn btn-primary" ng-click="deleteThing()">Delete Me</button>
+    </form>
+      
+   </li> 
+</ul>
+

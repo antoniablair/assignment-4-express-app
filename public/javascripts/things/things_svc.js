@@ -21,15 +21,13 @@ angular.module("my_world")
              return dfd.promise;
              
          }
-        //  return {
-        //      getThings: getThings,
-        //      save: save
-        //  };
          
-         function remove(thing){
+         function deleteThing(thing){
             var dfd = $q.defer();
-            $http.post("/api/things", thing)
+            console.log("Trying to delete " + thing);
+            $http.delete("/api/things", thing)
                 .then(function(thing){
+                    console.log("Got to dfd.resolve");
                     dfd.resolve(thing);
                 })
                 .catch( function(err){
@@ -40,7 +38,7 @@ angular.module("my_world")
          return {
              getThings: getThings,
              save: save,
-             remove: remove,
+             deleteThing: deleteThing,
          };
     });
     

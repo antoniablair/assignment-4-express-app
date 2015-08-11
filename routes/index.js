@@ -11,6 +11,9 @@ router.get('/things', function(req, res, next) {
 router.get('/things/new', function(req, res, next) {
   res.render('index', { title: 'Things' });
 });
+router.get('/things/delete', function(req, res, next) {
+  res.render('index', { title: 'Delete a Thing' });
+});
 router.get('/people', function(req, res, next) {
   res.render('index', { title: 'People' });
 });
