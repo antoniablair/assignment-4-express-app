@@ -1,10 +1,15 @@
+<!--<div class="alert alert-success" ng-show="success">-->
+<!--  {{ success }}-->
+<!--</div>-->
+
 <h2>Things</h2>
 <a href="/things/new">Add a New Thing</a> |
-<a href="/things/delete">Delete a Thing</a>
+<a href="/things/edit">Edit a Thing</a>
 <ul class="list-group">
    <li class="list-group-item" ng-repeat="thing in things">
-      {{ thing.name }} 
+      <a href="/things/{{thing._id}}">{{ thing.name }}</a>
       <br />
       {{ thing.price | currency }}
+       <button class="btn btn-primary" ng-click="deleteThing(thing._id)">Delete Me</button>
    </li> 
 </ul>

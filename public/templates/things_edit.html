@@ -16,11 +16,20 @@
       
       <!--<a href="/things/delete">Delete Me</a>-->
     <form class="form" name="thingForm">
+    <input required ng-model="thing.name" id="name" name="name" class="form-control" />
     <div class="form-group">
     </div>
-    <button class="btn btn-primary" ng-click="deleteThing()">Delete Me</button>
+    <button class="btn btn-primary" ng-click="deleteThing(thing)">Delete Me</button>
     </form>
       
    </li> 
 </ul>
 
+
+
+<!--exports.destroy = ...-->
+<!--...-->
+<!--    if(!thing) { ... }-->
+<!--    if(thing.user.toString() !== req.user._id.toString()){-->
+<!--      return res.send(403);-->
+<!--    }-->

@@ -1,22 +1,23 @@
 angular.module("my_world")
-    .controller("ThingsRemoveCtrl", function($scope, $http, $location, ThingsSvc){
+    .controller("ThingsRemoveCtrl", function($scope, $http, ThingsSvc){
         $scope.thing = {
         };
-        $scope.deleteThing = function(){
+        $scope.deleteThing = function(thing){
             ThingsSvc.deleteThing($scope.thing)
-                .then( function(thing){
-                    $location.path("/things");
+                .then(function(thing){
+                    $scope.error = 'Success!';
                 })
                 .catch(function(error){
                     $scope.error = error; 
                 });
         }
-        
-        ThingsSvc.getThings()
-            .then( function(things){
-                $scope.things = things;
-            });
     });
-    
-    
-    
+
+
+    // vm.deleteThing = function (_id) {
+    //   $http.delete('/api/things/' + _id)
+    //     .success(function () {
+    //       vm.getThings();
+    //       socket.emit('submit');
+    //     });
+    // };
